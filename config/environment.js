@@ -40,6 +40,8 @@ const metricsPort = process.env.METRICS_PORT || 3001
 
 const customResourceManagerDisabled = 'DISABLE_CUSTOM_RESOURCE_MANAGER' in process.env
 
+const labelSelector = process.env.LABEL_SELECTOR
+
 module.exports = {
   vaultEndpoint,
   vaultNamespace,
@@ -56,5 +58,6 @@ module.exports = {
   logLevel,
   customResourceManagerDisabled,
   useHumanReadableLogLevels,
-  logMessageKey
+  logMessageKey,
+  labelSelector
 }

@@ -25,7 +25,8 @@ const {
   pollingDisabled,
   rolePermittedAnnotation,
   namingPermittedAnnotation,
-  enforceNamespaceAnnotation
+  enforceNamespaceAnnotation,
+  labelSelector
 } = require('../config')
 
 async function main () {
@@ -37,7 +38,8 @@ async function main () {
   const externalSecretEvents = getExternalSecretEvents({
     kubeClient,
     customResourceManifest,
-    logger
+    logger,
+    labelSelector
   })
 
   const registry = Prometheus.register
